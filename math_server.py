@@ -1,4 +1,4 @@
-# ... imports and tool definitions ...
+h# ... imports and tool definitions ...
 import os
 from fastmcp import FastMCP
 from langchain_tavily import TavilySearch
@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 search_tool = TavilySearch(max_results=3)
-mcp = FastMCP("Math")
+mcp = FastMCP("Search")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
@@ -34,4 +34,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     
     # IMPORTANT: host must be "0.0.0.0" to work in Docker/Cloud
+
     mcp.run(transport="sse", host="0.0.0.0", port=port)
