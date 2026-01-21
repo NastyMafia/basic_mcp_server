@@ -1,0 +1,4 @@
+fastmcp
+langchain
+langchain_tavily
+dotenv
