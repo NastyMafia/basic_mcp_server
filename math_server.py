@@ -1,4 +1,4 @@
-h# ... imports and tool definitions ...
+# ... imports and tool definitions ...
 import os
 from fastmcp import FastMCP
 from langchain_tavily import TavilySearch
@@ -34,5 +34,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     
     # IMPORTANT: host must be "0.0.0.0" to work in Docker/Cloud
-
     mcp.run(transport="sse", host="0.0.0.0", port=port)
